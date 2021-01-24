@@ -18,7 +18,6 @@ def change_standard_of_row_to_column(sudoku):
 # row 중심의 스도쿠를 square 중심의 스도쿠로 변경 (각 3x3 칸 판별 목적)
 def change_standard_of_row_to_square(sudoku):
     changed_sudoku = [list() for _ in range(9)]
-    print(changed_sudoku)
     for i in range(0, 9, 3):
         changed_sudoku[i] = sudoku[i][0:3] + sudoku[i + 1][0:3] + sudoku[i + 2][0:3]
         changed_sudoku[i + 1] = sudoku[i][3:6] + sudoku[i + 1][3:6] + sudoku[i + 2][3:6]
