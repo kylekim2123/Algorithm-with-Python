@@ -8,5 +8,3 @@ for i in range(1, n + 1):
         print('-' * count, end=' ')
     else:
         print(i, end=' ')
-
-print([1, 2] in [2, 3, 4])
