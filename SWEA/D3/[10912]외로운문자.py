@@ -13,5 +13,4 @@ for t in range(1, int(input())+1):
         print(f'#{t} {sorted_result}')
     else:
         print(f'#{t} Good')
-    
             
