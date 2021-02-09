@@ -1,5 +1,5 @@
-def counting_sort(raw_arr, max_value):
-    count_arr = [0] * (max_value + 1) # 카운트 배열
+def counting_sort(raw_arr, max_v):
+    count_arr = [0] * (max_v + 1) # 카운트 배열
     sorted_arr = [0] * len(raw_arr) # 정렬할 배열
 
     # 카운트 배열 만들기
@@ -19,17 +19,18 @@ def counting_sort(raw_arr, max_value):
 
     return sorted_arr
 
+
 T = int(input())
 for t in range(1, T+1):
     n = int(input())
-    raw_arr = list(input().split())
+    raw_list = list(input().split())
 
     max_value = 0
-    for i in range(len(raw_arr)):
-        now_value = int(raw_arr[i][0])
+    for i in range(len(raw_list)):
+        now_value = int(raw_list[i][0])
         if now_value > max_value:
             max_value = now_value
 
-    sorted_arr = counting_sort(raw_arr, max_value)
+    sorted_list = counting_sort(raw_list, max_value)
     print('#%s' % t, end=' ')
-    print(*sorted_arr)
+    print(*sorted_list)
