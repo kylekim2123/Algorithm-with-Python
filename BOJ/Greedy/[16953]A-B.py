@@ -6,9 +6,7 @@ if b[-1] != '1' and int(b[-1]) % 2:
 else:
     count = 1
     while a != b:
-        print(b, count)
         last = b[-1]
-        print(last)
         if last == '1':
             b = b[:-1]
         elif int(last) % 2 == 0:
