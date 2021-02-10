@@ -9,7 +9,8 @@ def max_numbers(short_list, long_list, s_length, l_length):
     return max_num
 
 
-for t in range(1, int(input()) + 1):
+T = int(input())
+for t in range(1, T+1):
     n, m = map(int, input().split())
     ai = list(map(int, input().split()))
     bj = list(map(int, input().split()))
