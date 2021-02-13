@@ -11,7 +11,6 @@ rotations = [list(map(int, input().split())) for _ in range(k)] # 회전 톱니 
 count = 0
 for rotation in rotations:
     count += 1
-    print(count, saw_tooth)
     meet = [saw_tooth[0][2] != saw_tooth[1][6], saw_tooth[1][2] != saw_tooth[2][6], saw_tooth[2][2] != saw_tooth[3][6]] # 톱니끼리 맞닿은 부분
 
     tooth_num, direction = rotation[0]-1, rotation[1]
