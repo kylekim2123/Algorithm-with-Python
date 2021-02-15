@@ -1,9 +1,8 @@
+dr = (-1, 1, 0, 0)
+dc = (0, 0, -1, 1)
 T = int(input())
 for t in range(1, T+1):
     arr = [list(map(int, input().split())) for _ in range(5)]
-    dr = [-1, 1, 0, 0]
-    dc = [0, 0, -1, 1]
-
     total = 0
     for r in range(5):
         for c in range(5):
