@@ -12,6 +12,4 @@ for t in range(1, int(input()) + 1):
 
     print('#%s' % t)
     for i in range(n):
-        print(turn1[i], end=' ')
-        print(turn2[i], end=' ')
-        print(turn3[i])
+        print(' '.join([turn1[i], turn2[i], turn3[i]]))
