@@ -1,10 +1,8 @@
 # 11315. 오목 판정
 
-# 좌하, 하, 우하, 우
-dr = [1, 1, 1, 0]
-dc = [-1, 0, 1, 1]
-
 def is_five(board, n):
+    dr = [1, 1, 1, 0] # 좌하, 하, 우하, 우
+    dc = [-1, 0, 1, 1]
     for r in range(n):
         for c in range(n):
             for i in range(4):
