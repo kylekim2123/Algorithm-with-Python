@@ -15,6 +15,7 @@ def pop1():
         return stack1[temp]
     print('Stack Underflow: pop from empty list')
 
+
 def push2(v):
     global top2
     if top2 == N:
