@@ -1,3 +1,6 @@
+# 크기가 정해져 있는 배열과 top을 이용한 스택 구현
+
+# top을 -1로 두고
 def push1(v):
     global top1
     if top1 == N-1:
@@ -16,6 +19,7 @@ def pop1():
     print('Stack Underflow: pop from empty list')
 
 
+# top을 0으로 두고
 def push2(v):
     global top2
     if top2 == N:
@@ -33,6 +37,7 @@ def pop2():
     print('Stack Underflow: pop from empty list')
 
 
+# top을 -1로 두고
 N = 3
 stack1 = [''] * N
 top1 = -1
@@ -48,6 +53,7 @@ pop1()
 pop1()
 print(stack1)
 
+# top을 0으로 두고
 N = 3
 stack2 = [''] * N
 top2 = 0
