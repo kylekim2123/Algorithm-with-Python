@@ -1,4 +1,4 @@
-# 인접행렬 + 재귀 사용
+# 풀이4. 인접행렬 사용
 def dfs(v):
     visited[v] = True
     for next_node in range(1, V+1):
