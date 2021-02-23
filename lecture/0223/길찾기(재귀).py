@@ -1,3 +1,4 @@
+# dfs를 재귀로 구현
 def dfs(node):
     visited[node] = 1
     for next_node in AL[node]:
