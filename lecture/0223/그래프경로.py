@@ -52,7 +52,7 @@ for t in range(1, int(input())+1):
         graph[start].append(end)
 
     stack = []
-    visited = [False for _ in range(V+1)]
+    visited = [False] * (V+1)
     dfs3(S)
     if visited[G]:
         print('#%s 1' % t)
