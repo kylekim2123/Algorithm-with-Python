@@ -1,3 +1,4 @@
+# 단순 재귀로 구현 (중복 연산 많음)
 def attach(n):
     if n < 0:
         return 0
