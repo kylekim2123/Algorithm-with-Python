@@ -53,6 +53,8 @@ for t in range(1, int(input())+1):
 
     stack = []
     visited = [False] * (V+1)
+    # dfs1(S)
+    # dfs2(S)
     dfs3(S)
     if visited[G]:
         print('#%s 1' % t)
