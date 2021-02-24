@@ -1,5 +1,7 @@
 # 2806. N-Queen
 
+count = 0 # vscode에서 이거 없으면 에러라고 인식하는데, 사실 없어도 된다.
+
 # 유망성 검사
 def is_possible(now_row):
     # 이전 row들과 겹치는 열 or 대각이 있는지 검사
