@@ -7,7 +7,10 @@ for t in range(1, int(input())+1):
         numbers.extend(list(map(int, input().split())))
     i, j = 10, 1
     while True:
-        temp1 = set(range(i//10, i))
+        if i == 10:
+            temp1 = set(range(0, i))
+        else:
+            temp1 = set(range(i//10, i))
         temp2 = set()
         for k in range(0, n-j+1):
             temp2.add(int(''.join(map(str, numbers[k:k+j]))))
