@@ -1,8 +1,8 @@
 def isFull():
-    return rear == n-1
+    return rear == n-1 # 꼬리가 맨 끝에 도달하면 Queue가 가득찬 것
 
 def isEmpty():
-    return front == rear
+    return front == rear # 머리와 꼬리가 만나면 Queue가 빈 것
 
 def enQueue(q, data):
     global rear
