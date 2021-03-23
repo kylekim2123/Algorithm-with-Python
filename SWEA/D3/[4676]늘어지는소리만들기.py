@@ -1,6 +1,6 @@
 # 4676. 늘어지는 소리 만들기
 
-for  t in range(1, int(input())+1):
+for t in range(1, int(input())+1):
     word, h, locations = input(), int(input()), list(map(int, input().split()))
     numbers = [0] * (len(word)+1)
     for location in locations:
