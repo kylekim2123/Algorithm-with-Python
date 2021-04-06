@@ -5,47 +5,43 @@ class Node:
         self.right = None
 
 def insert(node, root):
-    root_node = bst[root]
-    if node < root_node.center:
-        if root_node.left:
-            insert(node, root_node.left)
+    if node.center < root.center:
+        if root.left:
+            insert(node, root.left)
         else:
-            bst[node] = Node(node)
-            root_node.left = bst[node].center
-    elif node > root_node.center:
-        if root_node.right:
-            insert(node, root_node.right)
+            root.left = node
+    elif node.center > root.center:
+        if root.right:
+            insert(node, root.right)
         else:
-            bst[node] = Node(node)
-            root_node.right = bst[node].center
+            root.right = node
 
 def find_parent(node, root):
-    if bst[root].left == node or bst[root].right == node:
+    if root.left == node or root.right == node:
         return root
-    if node < root:
-        return find_parent(node, bst[root].left)
-    if node > root:
-        return find_parent(node, bst[root].right)
+    if node.center < root.center:
+        return find_parent(node, root.left)
+    if node.center > root.center:
+        return find_parent(node, root.right)
 
-def delete(node):
-    global root
-    target = bst[node]
-    parent = bst.get(find_parent(node, root))
+def delete(target, root_node):
+    parent = find_parent(target, root_node)
     if target.left and target.right:
-        child_parent, child = target, bst[target.right]
+        child_parent, child = target, target.right
         while child.left:
-            child_parent, child = child, bst[child.left]
+            child_parent, child = child, child.left
         child.left = target.left
         if child_parent != target:
             child_parent.left = child.right
             child.right = target.right
-        if node == root:
+        if target == root_node:
+            global root
             root = child.center
         else:
             if target.center < parent.center:
-                parent.left = child.center
+                parent.left = child
             else:
-                parent.right = child.center
+                parent.right = child
     elif target.left or target.right:
         if target.center < parent.center:
             parent.left = (target.left or target.right)
@@ -56,14 +52,13 @@ def delete(node):
             parent.left = None
         else:
             parent.right = None
-    del(bst[node])
 
 def get_preorder(node):
-    result.append(node)
-    if bst[node].left:
-        get_preorder(bst[node].left)
-    if bst[node].right:
-        get_preorder(bst[node].right)
+    result.append(node.center)
+    if node.left:
+        get_preorder(node.left)
+    if node.right:
+        get_preorder(node.right)
 
 
 v, i, d = input().split()
@@ -74,12 +69,15 @@ deletions = list(map(int, input().split()))
 root = nodes[0]
 bst = {root: Node(root)}
 for node in nodes[1:]:
-    insert(node, root)
+    bst[node] = Node(node)
+    insert(bst[node], bst[root])
 for node in insertions:
-    insert(node, root)
+    bst[node] = Node(node)
+    insert(bst[node], bst[root])
 for node in deletions:
-    delete(node)
+    delete(bst[node], bst[root])
+    del(bst[node])
 
 result = []
-get_preorder(root)
+get_preorder(bst[root])
 print(' '.join(map(str, result)))
