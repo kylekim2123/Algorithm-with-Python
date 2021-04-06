@@ -1,3 +1,5 @@
+count = 0
+
 def count_subtree(node):
     global count
     count += 1
