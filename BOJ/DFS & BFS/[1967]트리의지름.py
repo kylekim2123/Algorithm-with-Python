@@ -2,11 +2,12 @@
 
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(100000)
 
 def dfs(node, length):
-    global diameter
+    global end_point, diameter
     if length > diameter:
+        end_point = node
         diameter = length
     visited[node] = 1
     for next_node, weight in tree[node]:
@@ -22,9 +23,7 @@ for _ in range(n-1):
     tree[e].append((s, w))
 
 visited = [0] * (n+1)
-diameter = 0
-for i in range(1, n+1):
-    if not visited[i] and len(tree[i]) == 1:
-        dfs(i, 0)
-        visited[i] = 1
+end_point, diameter = 0, 0
+dfs(1, 0)
+dfs(end_point, 0)
 print(diameter)
