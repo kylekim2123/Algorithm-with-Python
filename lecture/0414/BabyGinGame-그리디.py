@@ -1,3 +1,4 @@
+# 풀이2. 그리디
 for t in range(1, int(input())+1):
     cnt = [0] * 10
     for card in map(int, input()[:6]):
@@ -13,7 +14,7 @@ for t in range(1, int(input())+1):
             babygin += 1
             cnt[i] -= 3
             continue
-        if i <= 7 and all((cnt[i], cnt[i+1], cnt[i+2])):
+        if i <= 7 and all([cnt[i], cnt[i+1], cnt[i+2]]):
             babygin += 1
             for j in range(3):
                 cnt[i+j] -= 1
