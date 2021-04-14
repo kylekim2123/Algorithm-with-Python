@@ -1,3 +1,4 @@
+# 풀이1. 모든 순열 완전탐색
 CARD_COUNT = 6
 
 def is_run(half_cards):
