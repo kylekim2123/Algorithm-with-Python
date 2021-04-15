@@ -1,18 +1,24 @@
-from itertools import combinations
-
+def make_towers(n, r):
+    if r <= 0:
+        global min_height
+        height = sum(tower)
+        if B <= height < min_height:
+            min_height = height
+        return
+    if n < r:
+        return
+    tower[r-1] = H[n-1]
+    make_towers(n-1, r-1)
+    make_towers(n-1, r)
+ 
+ 
 for t in range(1, int(input())+1):
-    n, b = map(int, input().split())
-    heights = list(map(int, input().split()))
+    N, B = map(int, input().split())
+    H = list(map(int, input().split()))
     min_height = 20 * 10000
-    is_find_min = False
-    for i in range(n, 0, -1):
-        for case in combinations(heights, i):
-            tower = sum(case)
-            if b <= tower < min_height:
-                min_height = tower
-            if b == tower:
-                is_find_min = True
-                break
-        if is_find_min:
+    for i in range(1, N+1):
+        tower = [0] * i
+        make_towers(N, i)
+        if B == min_height:
             break
-    print('#%s %s' % (t, min_height-b))
+    print('#%s %s' % (t, min_height-B))
