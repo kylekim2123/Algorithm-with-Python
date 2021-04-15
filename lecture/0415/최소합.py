@@ -1,6 +1,8 @@
 def move(x, y, total):
+    global min_total
+    if total >= min_total:
+        return
     if x == n-1 and y == n-1:
-        global min_total
         min_total = min(min_total, total)
         return
     if y + 1 < n:
