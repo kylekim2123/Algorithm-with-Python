@@ -7,13 +7,13 @@ def dfs(node):
 
 for t in range(1, int(input())+1):
     v, e = map(int, input().split())
-    edges = list(map(int, input().split()))
     graph = [[] for _ in range(v+1)]
     visited = [False] * (v+1)
-    for i in range(0, e+e, 2):
-        graph[edges[i]].append(edges[i+1])
-        graph[edges[i+1]].append(edges[i])
+    for _ in range(e):
+        x, y = map(int, input().split())
+        graph[x].append(y)
+        graph[y].append(x)
 
     result = []
     dfs(1)
-    print('#%s %s' % (t, '-'.join(map(str, result))))
+    print('#%s %s' % (t, ' '.join(map(str, result))))
