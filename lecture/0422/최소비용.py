@@ -1,7 +1,7 @@
 INF = int(1e9)
 dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 
-def dijkstra(x, y):
+def bfs(x, y):
     costs = [[INF]*n for _ in range(n)]
     costs[x][y] = 0
     queue = [(x, y)]
@@ -22,4 +22,4 @@ def dijkstra(x, y):
 for t in range(1, int(input())+1):
     n = int(input())
     H = [list(map(int, input().split())) for _ in range(n)]
-    print('#%s %s' % (t, dijkstra(0, 0)))
+    print('#%s %s' % (t, bfs(0, 0)))
