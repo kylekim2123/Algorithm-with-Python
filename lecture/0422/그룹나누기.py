@@ -10,5 +10,5 @@ for t in range(1, int(input())+1):
     for i in range(0, m+m, 2):
         group[find_root(A[i+1])] = find_root(A[i]) # union
 
-    result = set(find_root(element) for element in group[1:])
-    print('#%s %s' % (t, len(result)))
+    result = sum(i == group[i] for i in range(1, n+1))
+    print('#%s %s' % (t, result))
