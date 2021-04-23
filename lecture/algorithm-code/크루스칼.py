@@ -21,7 +21,8 @@ for t in range(1, int(input())+1):
         if x_root != y_root: # 사이클이 발생하지 않은 경우
             parent[y_root] = x_root # union
             cost += w # 비용 합
-        if count >= n-1: # edge의 최대 수는 n-1이므로 이때 break
-            break
+            count += 1
+            if count >= n-1: # edge의 최대 수는 n-1이므로 이때 break
+                break
     print('#%s %s' % (t, cost))
         
