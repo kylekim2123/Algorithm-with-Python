@@ -6,21 +6,19 @@ OPERATOR = {
 }
 
 def solution(expression):
-    numbers, operators, word = [], [], []
+    numbers, operators, word = [], set(), []
     for digit in expression:
         if digit.isdecimal():
             word.append(digit)
             continue
         numbers.append(int(''.join(word)))
         numbers.append(digit)
-        operators.append(digit)
+        operators.add(digit)
         word = []
     numbers.append(int(''.join(word)))
-    
+
     results = []
-    operator_types = set(operators)
-    print(list(permutations(operator_types, len(operator_types))))
-    for priority in permutations(operator_types, len(operator_types)):
+    for priority in permutations(operators):
         temp = list(numbers)
         for op in priority:
             i = 1
@@ -33,7 +31,6 @@ def solution(expression):
                     continue
                 i += 1
         results.append(temp[0])
-    print(results)
     return max(abs(result) for result in results)
 
 expression = "50*6-3*2"
