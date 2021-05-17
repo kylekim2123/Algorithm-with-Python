@@ -1,12 +1,14 @@
 # Algorithm-with-Python
-> 파이썬 알고리즘 문제 풀이 및 코딩테스트 대비
-> 2021.05.17 기준 : 총 402문제 풀이
-> 아래 문제 풀이 갯수도 모두 2021.05.17 기준으로 작성
+> 파이썬 알고리즘 문제 풀이 및 코딩테스트 대비   
+> 
+> 2021.05.17 기준 : 총 402문제 풀이   
+> 
+> 아래 문제 풀이 갯수도 모두 2021.05.17 기준으로 작성   
 
 <br>
 
 ### 01. SW Expert Academy (SWEA)
-> 총 139문제 풀이
+> 총 139문제 풀이   
 > [SWEA 홈페이지](https://swexpertacademy.com/main/main.do)
 
 - `D1`: 19문제 풀이
@@ -21,7 +23,7 @@
 
 ### 02. Baekjoon Online Judge (BOJ)
 
-> 총 85문제 풀이
+> 총 85문제 풀이   
 > [BOJ 홈페이지](https://www.acmicpc.net/)
 
 - `BinarySearch` : 이진탐색 문제 풀이
@@ -38,7 +40,7 @@
 
 ### 03. Lecture
 
-> 총 156문제 풀이
+> 총 156문제 풀이   
 > SWEA 강의 연습문제 풀이
 
 - 날짜별로 폴더 구성
@@ -60,7 +62,7 @@
 <br>
 
 ### 05. Programmers
-> 총 3문제 풀이
+> 총 3문제 풀이   
 > [프로그래머스 홈페이지](https://programmers.co.kr/)
 
 - `Level 2` : 3문제 풀이
