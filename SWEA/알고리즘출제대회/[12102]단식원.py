@@ -33,7 +33,7 @@ def bfs(chickens):
                 queue.append((nx, ny))
     return get_thin_count(temp)
 
-
+result = []
 for t in range(1, int(input())+1):
     n, m = map(int, input().split())
     area = [input().split() for _ in range(n)]
@@ -59,5 +59,5 @@ for t in range(1, int(input())+1):
                             area[c][d] = '0'
                 area[a][b] = '0'
 
-    print('#%s %s' % (t, max_counts) )
-    
+    result.append('#%s %s' % (t, max_counts) )
+print('\n'.join(result))
