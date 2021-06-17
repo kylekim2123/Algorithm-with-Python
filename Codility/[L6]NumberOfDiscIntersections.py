@@ -1,13 +1,15 @@
 def solution(A):
     MAX_INTERSECTIONS = 10**7
-    circles = [(j-radius, j+radius) for j, radius in enumerate(A)]
-    len_circles = len(circles)
+    left, right = [], []
+    for j, radius in enumerate(A):
+        left.append(j-radius)
+        right.append(j+radius)
+    left.sort()
+    right.sort()
     intersections = 0
-    for j in range(len_circles):
-        left_j, right_j = circles[j]
-        for k in range(j+1, len_circles):
-            left_k, right_k = circles[k]
-            if (right_j < left_k) or (right_k < left_j):
-                continue
-            intersections += 1
-    return intersections if intersections < MAX_INTERSECTIONS else -1
+    j = 0
+    for i in range(len(A)):
+        while j < len(A) and left[j] <= right[i]:
+            intersections += (j-i)
+            j += 1
+    return intersections if intersections <= MAX_INTERSECTIONS else -1
