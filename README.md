@@ -32,6 +32,7 @@
 - `BinarySearch` : 이진탐색 문제 풀이
 - `DFS & BFS` : DFS와 BFS 문제 풀이
 - `Dijkstra` : 최단경로(다익스트라) 문제 풀이
+- `DP` : 다이나믹 프로그래밍 문제 풀이
 - `Greedy` : 그리디 문제 풀이
 - `Implementation` : 구현 문제 풀이
 - `MST` : 최소 스패닝 트리
