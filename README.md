@@ -1,9 +1,9 @@
 # Algorithm-with-Python
 > 파이썬 알고리즘 문제 풀이 및 코딩테스트 대비   
 > 
-> 2021.06.23 기준 : 총 440문제 풀이   
+> 2021.07.16 기준 : 총 462문제 풀이   
 > 
-> 아래 문제 풀이 갯수도 모두 2021.06.23 기준으로 작성   
+> 아래 문제 풀이 갯수도 모두 2021.07.16 기준으로 작성   
 
 <br>
 
@@ -25,20 +25,20 @@
 
 ### 02. Baekjoon Online Judge (BOJ)
 
-> 총 99문제 풀이
+> 총 111문제 풀이
 >
 > [BOJ 홈페이지](https://www.acmicpc.net/)
 
-- `BinarySearch` : 이진탐색 문제 풀이
-- `DFS & BFS` : DFS와 BFS 문제 풀이
-- `Dijkstra` : 최단경로(다익스트라) 문제 풀이
-- `DP` : 다이나믹 프로그래밍 문제 풀이
-- `Greedy` : 그리디 문제 풀이
-- `Implementation` : 구현 문제 풀이
+- `BinarySearch` : 이진탐색
+- `DFS & BFS` : DFS와 BFS
+- `Dijkstra` : 최단경로(다익스트라)
+- `DP` : 다이나믹 프로그래밍
+- `Greedy` : 그리디
+- `Implementation` : 구현
 - `MST` : 최소 스패닝 트리
-- `Recursion` : 재귀 문제 풀이
-- `Stack` : 스택 문제 풀이
-- `UnionFind` : 유니온 파인드(서로소 집합) 풀이
+- `Recursion` : 재귀
+- `Stack` : 스택
+- `UnionFind` : 유니온 파인드(서로소 집합)
 
 <br>
 
@@ -55,7 +55,7 @@
 
 ### 04. EXAM
 
-> 총 23문제 풀이
+> 총 26문제 풀이
 >
 > 코딩테스트 모의, 실제 시험 풀이
 
@@ -67,16 +67,18 @@
 - 2020 카카오 인턴십
 - 2021 카카오 채용연계형 인턴십
 - 2021 DEV CARNIVAL
+- 2021 루키히어로 4기 코딩테스트
 
 <br>
 
 ### 05. Programmers
-> 총 9문제 풀이
+> 총 16문제 풀이
 >
 > [프로그래머스 홈페이지](https://programmers.co.kr/)
 
-- `Level 2` : 5문제 풀이
-- `Level 3` : 4문제 풀이
+- `Level 2` : 6문제 풀이
+- `Level 3` : 9문제 풀이
+- `Level 4` : 1문제 풀이
 
 <br>
 
