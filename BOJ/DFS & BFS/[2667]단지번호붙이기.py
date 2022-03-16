@@ -1,7 +1,9 @@
 # 2667. 단지번호붙이기 (실버1)
 
 import sys
+
 input = sys.stdin.readline
+
 
 def dfs(x, y):
     global total
