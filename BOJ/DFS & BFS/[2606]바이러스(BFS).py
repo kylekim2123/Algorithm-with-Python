@@ -1,25 +1,29 @@
-# 2606. 바이러스(BFS) (실버3)
+# 2606. 바이러스 (실버3) - BFS
 
 from collections import deque
 
-def bfs(start):
-    queue = deque([start])
-    visited[start] = True
+
+def bfs(node):
+    queue = deque([node])
+    visited[node] = True
+    total = -1
     while queue:
         node = queue.popleft()
+        total += 1
         for next_node in graph[node]:
             if not visited[next_node]:
-                queue.append(next_node)
                 visited[next_node] = True
+                queue.append(next_node)
+    return total
 
-n = int(input())
-m = int(input())
-graph = [[] for _ in range(n+1)]
+
+n, m = int(input()), int(input())
+graph = [[] for _ in range(n + 1)]
+visited = [False] * (n + 1)
+
 for _ in range(m):
-    s, e = map(int, input().split())
-    graph[s].append(e)
-    graph[e].append(s)
+    start, end = map(int, input().split())
+    graph[start].append(end)
+    graph[end].append(start)
 
-visited = [False] * (n+1)
-bfs(1)
-print(visited.count(True)-1)
+print(bfs(1))
