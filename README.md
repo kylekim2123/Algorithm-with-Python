@@ -1,2 +1,4 @@
 # Algorithm-with-Python
-> 알고리즘 문제 풀이 및 코딩테스트 대비 with Python
+> Solved AC 다이아를 목표로 알고리즘을 학습하고 있습니다.
+
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kyle456)](https://solved.ac/kyle456/)
