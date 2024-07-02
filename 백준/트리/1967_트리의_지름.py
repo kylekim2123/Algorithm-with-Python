@@ -1,4 +1,4 @@
-# 1967. 트리의 지름 (골드4)
+# 골드 4
 
 import sys
 input = sys.stdin.readline
