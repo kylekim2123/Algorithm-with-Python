@@ -1,53 +1,65 @@
 # 골드 3
 
 import sys
-from heapq import heappush, heappop
 
 input = sys.stdin.readline
 
 
 def find(x):
     if x != parent[x]:
-        parent[x] = find(parent[x])
+        parent[x] = find(parent[x])  # path compression
+
     return parent[x]
 
 
 def union(x, y):
-    if x < y:
-        parent[y] = x
+    x_root, y_root = find(x), find(y)
+
+    if x_root == y_root:
+        return False
+
+    # union by rank
+    if rank[x_root] > rank[y_root]:
+        parent[y_root] = x_root
+    elif rank[x_root] < rank[y_root]:
+        parent[x_root] = y_root
     else:
-        parent[x] = y
+        parent[x_root] = y_root
+        rank[y_root] += 1  # 랭크가 같은 것끼리 합한 후에는 랭크 + 1을 해준다.
+
+    return True
 
 
 n, m = map(int, input().split())
 gods = [list(map(int, input().split())) for _ in range(n)]
-edges = []
-
-for i in range(n - 1):
-    x1, y1 = gods[i]
-    for j in range(i + 1, n):
-        x2, y2 = gods[j]
-        w = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
-        heappush(edges, (w, i + 1, j + 1))
-
 parent = list(range(n + 1))
-counts, cost = 0, 0
+rank = [0] * (n + 1)
+edges = []
+total, counts = 0, 0
 
+# 이미 연결된 우주신들은 같은 집합으로 만들기
 for _ in range(m):
     x, y = map(int, input().split())
-    x_root, y_root = find(x), find(y)
+    union(x, y)
 
-    if x_root != y_root:
-        union(x_root, y_root)
+# 좌표평면 상의 우주신들의 간선 정보 만들기
+for i in range(n):
+    x1, y1 = gods[i]
+
+    for j in range(i + 1, n):
+        x2, y2 = gods[j]
+        distance = abs(x1 - x2) ** 2 + abs(y1 - y2) ** 2  # 피타고라스 정리를 이용한 거리 계산
+        edges.append((distance, i + 1, j + 1))
+
+edges.sort()
+
+# 크루스칼 알고리즘
+for distance, x, y in edges:
+    if union(x, y):
+        total += distance ** 0.5  # c^2의 상태이므로 루트 연산을 해야함
         counts += 1
 
-while counts < n - 1:
-    w, x, y = heappop(edges)
-    x_root, y_root = find(x), find(y)
+        if counts == n - 1:
+            break
 
-    if x_root != y_root:
-        union(x_root, y_root)
-        cost += w
-        counts += 1
-
-print(f"{cost:.2f}")
+print(f"{total:.2f}")
