@@ -7,7 +7,7 @@ input = sys.stdin.readline
 
 def find(x):
     if x != parent[x]:
-        parent[x] = find(parent[x])
+        parent[x] = find(parent[x])  # path compression
 
     return parent[x]
 
@@ -18,13 +18,14 @@ def union(x, y):
     if x_root == y_root:
         return
 
-    if rank[x_root] < rank[y_root]:
+    # union by rank
+    if rank[x_root] > rank[y_root]:
+        parent[y_root] = x_root
+    elif rank[x_root] < rank[y_root]:
         parent[x_root] = y_root
-    elif rank[x_root] > rank[y_root]:
-        parent[y_root] = x_root
     else:
-        parent[y_root] = x_root
-        rank[x_root] += 1
+        parent[x_root] = y_root
+        rank[y_root] += 1  # 랭크가 같은 것끼리 합한 후에는 랭크 + 1을 해준다.
 
 
 n, m = map(int, input().split())
@@ -36,5 +37,9 @@ for _ in range(m):
 
     if op == 0:
         union(a, b)
+        continue
+
+    if find(a) == find(b):
+        print("YES")
     else:
-        print("YES" if find(a) == find(b) else "NO")
+        print("NO")
