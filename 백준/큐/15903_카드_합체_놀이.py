@@ -21,4 +21,4 @@ for _ in range(m):
     heappush(heap, total)  # x번 카드 덮어쓰기
     heappush(heap, total)  # y번 카드 덮어쓰기
 
-print(sum(heap))  # 합체가 모두 끝난 뒤의 카드의이 총합
+print(sum(heap))  # 합체가 모두 끝난 뒤의 카드의 총합
